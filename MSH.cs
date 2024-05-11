@@ -34,8 +34,8 @@ namespace Mightier_MSH
             for (int i = 0; i < boneCount; i++)
                 msh.bones.Add(new Vector3(br.ReadInt32(), br.ReadInt32(), br.ReadInt32()));
 
-            int faceCount = br.ReadInt32();
-            for (int i = 0; i < faceCount / 3; i++)
+            int faceCount = br.ReadInt32() / 3;
+            for (int i = 0; i < faceCount; i++)
                 msh.faces.Add(new Vector3(br.ReadInt16(), br.ReadInt16(), br.ReadInt16()));
 
             return msh;
